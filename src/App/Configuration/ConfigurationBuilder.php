@@ -1,11 +1,10 @@
 <?php
 namespace App\Configuration;
 
-use SideKit\Config\Exception\InvalidConfigException;
 use SideKit\Config\ConfigKit;
 use SideKit\Config\Contracts\ConfigurationBuilderInterface;
+use SideKit\Config\Exception\InvalidConfigException;
 use SideKit\Config\Support\Filesystem;
-use SideKit\Config\Support\Str;
 use yii\helpers\ArrayHelper;
 
 class ConfigurationBuilder implements ConfigurationBuilderInterface
@@ -67,7 +66,6 @@ class ConfigurationBuilder implements ConfigurationBuilderInterface
      */
     public function useCacheDirectory($path)
     {
-
         if (!$this->filesystem->isDirectory($path)) {
             $this->filesystem->makeDirectory($path, 0755, false, true);
         }
@@ -115,7 +113,6 @@ class ConfigurationBuilder implements ConfigurationBuilderInterface
         $path = $configPath . DIRECTORY_SEPARATOR . $env;
 
         if ($this->filesystem->exists($path)) {
-
             $envConfig = $path . DIRECTORY_SEPARATOR . 'app.php';
 
             if ($this->filesystem->exists($envConfig)) {
@@ -178,5 +175,4 @@ class ConfigurationBuilder implements ConfigurationBuilderInterface
 
         return $sections;
     }
-
 }
