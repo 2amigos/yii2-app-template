@@ -1,0 +1,10 @@
+class_name: AcceptanceTester
+
+modules:
+    enabled:
+        - PhpBrowser:
+            url: http://localhost:8080/
+        - Yii2:
+            part: orm
+            entryScript: index-test.php
+            cleanup: false
