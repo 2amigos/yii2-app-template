@@ -42,7 +42,7 @@ very cautious with that power, it could lead bringing more problems than advanta
 ## Directory Structure
 ```
 app                 [ Yii's application related code: commands, components, controllers, bundles, models, modules, 
-                      views and widgets ]
+|                     views and widgets ]
 ├── assets          [ contains asset's definitions ]
 ├── commands        [ contains Console commands (Yii names them controllers) ]
 ├── controllers     [ contains Web controller classes ]
