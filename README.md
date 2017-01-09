@@ -52,7 +52,7 @@ bootstrap           [ contains bootstrap process files ]
 config              [ contains application configuration files ]
 public              [ contains Web application entry script + static resources ]
 runtime             [ contains files generated during application's runtime ]
-src                 [ contains business logic files. Portable code, free of Yii's code. Build your library here. ]
+src                 [ contains domain business logic files. Portable code, free of Yii's code. Build your library here. ]
 tests               [ contains codeception tests for your application ]
 ```
 
