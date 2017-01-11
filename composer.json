@@ -1,13 +1,13 @@
 {
-    "name": "yiisoft/yii2-app-basic",
-    "description": "Yii 2 Basic Project Template",
+    "name": "sidekit/yii2-app-template",
+    "description": "Yii 2 Project Template",
     "keywords": ["yii2", "framework", "basic", "project template", "sidekit", "config"],
-    "homepage": "https://github.com/yiisoft/yii2-app-basic",
+    "homepage": "https://github.com/sidekit/yii2-app-template",
     "type": "project",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/sidekit/yii2-app-basic/issues?state=open",
-        "source": "https://github.com/sidekit/yii2-app-basic"
+        "issues": "https://github.com/sidekit/yii2-app-template/issues?state=open",
+        "source": "https://github.com/sidekit/yii2-app-template"
     },
     "minimum-stability": "stable",
     "require": {
