@@ -67,3 +67,28 @@ ConfigKit::env()->load();
 
 defined('YII_DEBUG') or define('YII_DEBUG', ConfigKit::env()->get('YII_DEBUG'));
 defined('YII_ENV') or define('YII_ENV', ConfigKit::env()->get('YII_ENV'));
+
+/*
+ * --------------------------------------------------------------------------
+ * Register Yii and its class auto loader
+ * --------------------------------------------------------------------------
+ *
+ * Why Yii autoloader must be here?
+ *
+ * Because when including Yii.php file it automatically injects BaseYii.php.
+ * When that is happening, BaseYii.php registers YII_DEBUG and YII_ENV
+ * constants, therefore not honouring their declaration above these lines.
+ * - Thanks @jmper
+ *
+ * Yii also provides a high-performance class autoloader fully compliant with
+ * the PSR-4 standard. When using the Yii autoloader together with other
+ * autoloaders (Composer), you should include the Yii.php file after all other
+ * autoloaders are installed. This will make the Yii autoloader the first one
+ * responding to any class autoloading request.
+ *
+ * Note: If you do not want to use the Yii autoloader at all you will have to
+ * create your very own version of Yii (see the file on 'vendor/yiisoft/yii2')
+ * and include it in the script.
+ */
+
+require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
