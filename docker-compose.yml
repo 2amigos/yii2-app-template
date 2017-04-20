@@ -1,0 +1,13 @@
+version: '2'
+services:
+  php:
+    build: .
+    ports:
+      - 16780:80
+    volumes:
+      - ./app:/app/app
+      - ./vendor:/app/vendor
+      # Re-use host's composer cache
+      - ~/.composer/cache:/root/.composer/cache
+      #- ./composer.json:/app/composer.json
+      #- ./composer.lock:/app/composer.lock
