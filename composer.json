@@ -1,7 +1,14 @@
 {
     "name": "sidekit/yii2-app-template",
     "description": "Yii 2 Project Template",
-    "keywords": ["yii2", "framework", "basic", "project template", "sidekit", "config"],
+    "keywords": [
+        "yii2",
+        "framework",
+        "basic",
+        "project template",
+        "sidekit",
+        "config"
+    ],
     "homepage": "https://github.com/sidekit/yii2-app-template",
     "type": "project",
     "license": "BSD-3-Clause",
@@ -32,9 +39,6 @@
         "friendsofphp/php-cs-fixer": "^2.0",
         "phpmd/phpmd": "^2.4"
     },
-    "config": {
-        "process-timeout": 1800
-    },
     "scripts": {
         "post-root-package-install": [
             "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
@@ -58,9 +62,11 @@
             "kill $(lsof -ti tcp:8080)"
         ]
     },
-    "autoload" : {
+    "autoload": {
         "psr-4": {
-            "App\\": ["./src/App"]
+            "App\\": [
+                "./src/App"
+            ]
         }
     },
     "extra": {
@@ -76,6 +82,23 @@
         "asset-installer-paths": {
             "npm-asset-library": "vendor/npm",
             "bower-asset-library": "vendor/bower"
+        }
+    },
+    "config": {
+        "preferred-install": {
+            "sidekit/*": "source",
+            "*": "auto"
+        },
+        "fxp-asset": {
+            "installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
+            },
+            "vcs-driver-options": {
+                "github-no-api": true
+            },
+            "git-skip-update": "2 days",
+            "pattern-skip-version": "(-build|-patch)"
         }
     }
 }
