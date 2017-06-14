@@ -1,7 +1,7 @@
 # Yii 2 Project Template With ConfigKit
 
 This project is an example of what can be done with 
-[https://github.com/sidekit/config](https://github.com/sidekit/config).
+[https://github.com/2amigos/yii2-config-kit](https://github.com/2amigos/yii2-config-kit).
 
 It's a proposed application project template for Yii2 projects. This new template is perfect for projects of any size. 
 Even though the Yii community recommends the usage of the advanced project template, but if we look carefully at that 
