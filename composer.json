@@ -6,8 +6,8 @@
         "framework",
         "basic",
         "project template",
-        "sidekit",
-        "config"
+        "2amigos",
+        "structure"
     ],
     "homepage": "https://github.com/2amigos/yii2-app-template",
     "type": "project",
