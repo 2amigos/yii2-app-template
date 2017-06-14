@@ -1,5 +1,5 @@
 {
-    "name": "sidekit/yii2-app-template",
+    "name": "2amigos/yii2-app-template",
     "description": "Yii 2 Project Template",
     "keywords": [
         "yii2",
@@ -9,12 +9,12 @@
         "sidekit",
         "config"
     ],
-    "homepage": "https://github.com/sidekit/yii2-app-template",
+    "homepage": "https://github.com/2amigos/yii2-app-template",
     "type": "project",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/sidekit/yii2-app-template/issues?state=open",
-        "source": "https://github.com/sidekit/yii2-app-template"
+        "issues": "https://github.com/2amigos/yii2-app-template/issues?state=open",
+        "source": "https://github.com/2amigos/yii2-app-template"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
