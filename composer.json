@@ -16,7 +16,8 @@
         "issues": "https://github.com/sidekit/yii2-app-template/issues?state=open",
         "source": "https://github.com/sidekit/yii2-app-template"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0.5",
@@ -78,10 +79,6 @@
                     "yii": "0755"
                 }
             ]
-        },
-        "asset-installer-paths": {
-            "npm-asset-library": "vendor/npm",
-            "bower-asset-library": "vendor/bower"
         }
     },
     "config": {
