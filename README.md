@@ -1,5 +1,9 @@
 # Yii 2 Project Template With ConfigKit
 
+[![Packagist Version](https://img.shields.io/packagist/v/2amigos/yii2-app-template.svg?style=flat-square)](https://packagist.org/packages/2amigos/yii2-app-template)
+[![Latest Stable Version](https://poser.pugx.org/2amigos/yii2-app-template/version)](https://packagist.org/packages/2amigos/yii2-app-template)
+[![Total Downloads](https://poser.pugx.org/2amigos/yii2-app-template/downloads)](https://packagist.org/packages/2amigos/yii2-app-template)
+
 This project is an example of what can be done with 
 [https://github.com/2amigos/yii2-config-kit](https://github.com/2amigos/yii2-config-kit).
 
