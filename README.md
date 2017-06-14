@@ -51,7 +51,6 @@ app                 [ Yii's application related code: commands, components, cont
 ├── controllers     [ contains Web controller classes ]
 ├── migrations      [ database migrations ]
 ├── models          [ contains model classes ]
-├── modules         [ contains application modules ]
 ├── views           [ contains application views ]
 └── widgets         [ contains widget components ]
 bin                 [ contains command-line executable scripts ]
