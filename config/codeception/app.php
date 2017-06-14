@@ -10,7 +10,7 @@
  * (install/update) them for you.
  */
 
-require __DIR__ . '/../../vendor/autoload.php';
+require __DIR__ . '/../../bootstrap/autoload.php';
 
 /*
  * --------------------------------------------------------------------------

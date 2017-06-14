@@ -91,4 +91,4 @@ defined('YII_ENV') or define('YII_ENV', ConfigKit::env()->get('YII_ENV'));
  * and include it in the script.
  */
 
-require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
+require_once __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';

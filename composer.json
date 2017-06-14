@@ -38,7 +38,8 @@
         "facebook/webdriver": "^1.2",
         "squizlabs/php_codesniffer": "^2.7",
         "friendsofphp/php-cs-fixer": "^2.0",
-        "phpmd/phpmd": "^2.4"
+        "phpmd/phpmd": "^2.4",
+        "guzzlehttp/guzzle": "> 4.1.4 <7.0"
     },
     "scripts": {
         "post-root-package-install": [
