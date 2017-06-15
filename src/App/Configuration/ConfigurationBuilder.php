@@ -128,7 +128,7 @@ class ConfigurationBuilder implements ConfigurationBuilderInterface
          * Local configuration always overrides
          */
         $local = ConfigKit::str()->is($env, 'local')
-            ? [] // local env? shouldn't be... but just in case ;)
+            ? $sections // local env? is an override
             : ArrayHelper::merge($sections, $this->buildEnv($name, 'local'));
 
         return ArrayHelper::merge($config, $local);
