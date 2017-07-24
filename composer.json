@@ -95,5 +95,11 @@
             "git-skip-update": "2 days",
             "pattern-skip-version": "(-build|-patch)"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
 }
