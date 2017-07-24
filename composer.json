@@ -80,6 +80,11 @@
                     "yii": "0755"
                 }
             ]
+        },
+        "installer-types": ["bower-asset", "npm-asset"],
+        "installer-paths": {
+            "{$vendor}/bower/": ["type:bower-asset"],
+            "{$vendor}/npm/" : ["type:npm-asset"]
         }
     },
     "config": {
@@ -87,14 +92,6 @@
             "sidekit/*": "source",
             "*": "auto"
         },
-        "fxp-asset": {
-            "installer-paths": {
-                "npm-asset-library": "vendor/npm",
-                "bower-asset-library": "vendor/bower"
-            },
-            "git-skip-update": "2 days",
-            "pattern-skip-version": "(-build|-patch)"
-        }
     },
     "repositories": [
         {
