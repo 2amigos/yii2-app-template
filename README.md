@@ -77,7 +77,7 @@ If you do not have Composer, you may install it by following the instructions at
 You can then install this project template using the following command:
 
 ```
-php composer.phar global require "fxp/composer-asset-plugin:^1.2.0"
+php composer.phar global require "oomphinc/composer-installers-extender": "^1.1"
 php composer.phar create-project --prefer-dist --stability=dev sidekit/yii2-app-template your-site-name
 ```
 
