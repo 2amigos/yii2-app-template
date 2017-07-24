@@ -83,8 +83,8 @@
         },
         "installer-types": ["bower-asset", "npm-asset"],
         "installer-paths": {
-            "{$vendor}/bower/": ["type:bower-asset"],
-            "{$vendor}/npm/" : ["type:npm-asset"]
+            "vendor/{$vendor}": ["type:bower-asset"],
+            "vendor/{$vendor}" : ["type:npm-asset"]
         }
     },
     "config": {
