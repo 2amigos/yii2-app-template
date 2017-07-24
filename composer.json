@@ -91,7 +91,7 @@
         "preferred-install": {
             "sidekit/*": "source",
             "*": "auto"
-        },
+        }
     },
     "repositories": [
         {
