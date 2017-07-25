@@ -78,7 +78,7 @@ You can then install this project template using the following command:
 
 ```
 php composer.phar global require "fxp/composer-asset-plugin:^1.2.0"
-php composer.phar create-project --prefer-dist --stability=dev sidekit/yii2-app-template your-site-name
+php composer.phar create-project --prefer-dist --stability=dev 2amigos/yii2-app-template your-site-name
 ```
 
 Once the commands finish simply do the following: 
