@@ -80,11 +80,6 @@
                     "yii": "0755"
                 }
             ]
-        },
-        "installer-types": ["bower-asset", "npm-asset"],
-        "installer-paths": {
-            "vendor/bower/{$name}": ["type:bower-asset"],
-            "vendor/npm/{$name}" : ["type:npm-asset"]
         }
     },
     "config": {
