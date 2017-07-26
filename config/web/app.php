@@ -26,4 +26,9 @@ return [
     'language' => ConfigKit::env()->get('APP_LANGUAGE'),
 
     'bootstrap' => ['log'],
+
+    'aliases' => [
+        '@bower' => '@vendor/bower-asset',
+        '@npm'   => '@vendor/npm-asset',
+    ]
 ];
