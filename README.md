@@ -77,7 +77,6 @@ If you do not have Composer, you may install it by following the instructions at
 You can then install this project template using the following command:
 
 ```
-php composer.phar global require "fxp/composer-asset-plugin:^1.2.0"
 php composer.phar create-project --prefer-dist --stability=dev 2amigos/yii2-app-template your-site-name
 ```
 
@@ -111,7 +110,7 @@ web root so you will be able to run your functional and acceptance tests:
 composer start-test-server 
 ```
 
-Then tests can be executeb by running:
+Then tests can be execute by running:
  
 ``` 
 composer exec codecept run
