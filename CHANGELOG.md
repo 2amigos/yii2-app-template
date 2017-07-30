@@ -1,5 +1,7 @@
 # CHANGELOG
 
+## 1.0.10 - Work in progress
+
 ## 1.0.9 - July 29, 2017
 - Fix #23: Remove unnecessary code (pana1990)
 - Enh #21: Add alias @root (bahirul)
