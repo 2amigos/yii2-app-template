@@ -9,7 +9,7 @@
  *
  */
 
-require(__DIR__ . '/bootstrap/autoload.php');
+require __DIR__ . '/bootstrap/autoload.php';
 
 /*
  * --------------------------------------------------------------------------
@@ -20,7 +20,7 @@ require(__DIR__ . '/bootstrap/autoload.php');
  *
  */
 
-require(__DIR__ . '/bootstrap/sidekit.php');
+require __DIR__ . '/bootstrap/sidekit.php';
 
 /*
  * --------------------------------------------------------------------------
@@ -31,7 +31,7 @@ require(__DIR__ . '/bootstrap/sidekit.php');
  * advantage of its loaded configuration values
  */
 
-require(__DIR__ . '/bootstrap/aliases.php');
+require __DIR__ . '/bootstrap/aliases.php';
 
 /*
  * --------------------------------------------------------------------------
@@ -43,7 +43,7 @@ require(__DIR__ . '/bootstrap/aliases.php');
  * unnecessary code on the entry script.
  */
 
-$app = require(__DIR__ . '/bootstrap/console.php');
+$app = require __DIR__ . '/bootstrap/console.php';
 
 $exitCode = $app->run();
 
