@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## 1.0.10 - Work in progress
+- Fix: Require as statement not as a function (tonydspaniard)
 - Enh: Add meta tag for X-UA-Compatible (bahirul) 
 
 ## 1.0.9 - July 29, 2017
