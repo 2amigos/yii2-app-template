@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## 1.0.10 - Work in progress
+- Enh #29: Add yii2-shell package by default (pana1990)
 - Fix #26: Require as statement not as a function (tonydspaniard)
 - Enh #25: Add meta tag for X-UA-Compatible (bahirul) 
 - Fix #22: Add alias @tests (pana1990)
