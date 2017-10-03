@@ -10,7 +10,7 @@
  *
  */
 
-require(__DIR__ . '/../../bootstrap/autoload.php');
+require __DIR__ . '/../../bootstrap/autoload.php';
 
 /*
  * --------------------------------------------------------------------------
@@ -21,7 +21,7 @@ require(__DIR__ . '/../../bootstrap/autoload.php');
  *
  */
 
-require(__DIR__ . '/../../bootstrap/sidekit-test.php');
+require __DIR__ . '/../../bootstrap/sidekit-test.php';
 
 /*
  * --------------------------------------------------------------------------
@@ -32,7 +32,7 @@ require(__DIR__ . '/../../bootstrap/sidekit-test.php');
  * advantage of its loaded configuration values
  */
 
-require(__DIR__ . '/../../bootstrap/aliases.php');
+require __DIR__ . '/../../bootstrap/aliases.php';
 
 
 use SideKit\Config\ConfigKit;
