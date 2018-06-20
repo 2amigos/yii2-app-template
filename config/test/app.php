@@ -24,4 +24,9 @@ return [
     'runtimePath' => ConfigKit::config()->getRuntimePath(),
 
     'language' => ConfigKit::env()->get('APP_LANGUAGE'),
+
+    'aliases' => [
+        '@bower' => '@vendor/bower-asset',
+        '@npm'   => '@vendor/npm-asset',
+    ]
 ];
