@@ -1,6 +1,6 @@
 <?php
 
-use SideKit\Config\ConfigKit;
+use Da\Config\Configuration;
 use yii\web\Application;
 use App\Configuration\ConfigurationBuilder;
 
@@ -22,7 +22,7 @@ $root = dirname(__DIR__);
 
 $builder = (new ConfigurationBuilder())->useDirectory($root . DIRECTORY_SEPARATOR . 'config');
 
-ConfigKit::config()
+Configuration::app()
     ->useConfigurationBuilder($builder)
     ->useRootPath($root);
 
@@ -37,7 +37,7 @@ ConfigKit::config()
  * the appropriate .env file in the path specified in SideKit.
  */
 
-ConfigKit::env()->loadEnvironmentFrom('.env.test')->overload();
+Configuration::env()->loadEnvironmentFrom('.env.test')->overload();
 
 /*
  * --------------------------------------------------------------------------
@@ -50,7 +50,7 @@ ConfigKit::env()->loadEnvironmentFrom('.env.test')->overload();
  * variables.
  */
 
-$config = ConfigKit::config()->build('test', ConfigKit::env()->get('CONFIG_USE_CACHE'));
+$config = Configuration::app()->build('test', Configuration::env()->get('CONFIG_USE_CACHE'));
 
 $app = new Application($config);
 

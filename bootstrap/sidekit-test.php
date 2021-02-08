@@ -1,6 +1,6 @@
 <?php
 
-use SideKit\Config\ConfigKit;
+use Da\Config\Configuration;
 use App\Configuration\ConfigurationBuilder;
 
 /*
@@ -21,7 +21,7 @@ $root = dirname(__DIR__);
 
 $builder = new ConfigurationBuilder();
 
-ConfigKit::config()
+Configuration::app()
     ->useConfigurationBuilder($builder)
     ->useRootPath($root);
 
@@ -35,7 +35,7 @@ ConfigKit::config()
  * as the following is specified.
  */
 
-// ConfigKit::config()
+// Configuration::app()
 //    ->useConfigurationBuilder($builder)
 //    ->useRootPath($root)
 //    ->useBasePath($root . '/app')
@@ -55,8 +55,7 @@ ConfigKit::config()
  * the appropriate .env file in the path specified in SideKit.
  */
 
-ConfigKit::env()->loadEnvironmentFrom('.env.test')->load();
-
+Configuration::env()->loadEnvironmentFrom('.env.test')->load();
 /*
  * --------------------------------------------------------------------------
  * Initialize constants required by Yii
@@ -65,8 +64,8 @@ ConfigKit::env()->loadEnvironmentFrom('.env.test')->load();
  * I cannot get rid of them. They are being used within core. Oh well...
  */
 
-defined('YII_DEBUG') or define('YII_DEBUG', ConfigKit::env()->get('YII_DEBUG'));
-defined('YII_ENV') or define('YII_ENV', ConfigKit::env()->get('YII_ENV'));
+defined('YII_DEBUG') or define('YII_DEBUG', Configuration::env()->get('YII_DEBUG'));
+defined('YII_ENV') or define('YII_ENV', Configuration::env()->get('YII_ENV'));
 
 /*
  * --------------------------------------------------------------------------

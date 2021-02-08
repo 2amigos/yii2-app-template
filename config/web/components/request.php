@@ -1,7 +1,7 @@
 <?php
 
-use SideKit\Config\ConfigKit;
+use Da\Config\Configuration;
 
 return [
-    'cookieValidationKey' => ConfigKit::env()->get('APP_COOKIE_VALIDATION_KEY'),
+    'cookieValidationKey' => Configuration::env()->get('APP_COOKIE_VALIDATION_KEY'),
 ];

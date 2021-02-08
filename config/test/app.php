@@ -1,6 +1,6 @@
 <?php
 
-use SideKit\Config\ConfigKit;
+use Da\Config\Configuration;
 
 return [
 
@@ -17,13 +17,13 @@ return [
 
     'id' => 'application-id-tests',
 
-    'basePath' => ConfigKit::config()->getBasePath(),
+    'basePath' => Configuration::app()->getBasePath(),
 
-    'vendorPath' => ConfigKit::config()->getVendorPath(),
+    'vendorPath' => Configuration::app()->getVendorPath(),
 
-    'runtimePath' => ConfigKit::config()->getRuntimePath(),
+    'runtimePath' => Configuration::app()->getRuntimePath(),
 
-    'language' => ConfigKit::env()->get('APP_LANGUAGE'),
+    'language' => Configuration::env()->get('APP_LANGUAGE'),
 
     'aliases' => [
         '@bower' => '@vendor/bower-asset',

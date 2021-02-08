@@ -1,10 +1,11 @@
 <?php
 namespace App\Configuration;
 
-use SideKit\Config\ConfigKit;
-use SideKit\Config\Contracts\ConfigurationBuilderInterface;
-use SideKit\Config\Exception\InvalidConfigException;
-use SideKit\Config\Support\Filesystem;
+use Da\Config\Configuration;
+use Da\Config\Contracts\ConfigurationBuilderInterface;
+use Da\Config\Exception\FileNotFoundException;
+use Da\Config\Exception\InvalidConfigException;
+use Da\Config\Support\Filesystem;
 use yii\helpers\ArrayHelper;
 
 class ConfigurationBuilder implements ConfigurationBuilderInterface
@@ -33,7 +34,7 @@ class ConfigurationBuilder implements ConfigurationBuilderInterface
      */
     public function __construct(Filesystem $filesystem = null)
     {
-        $this->filesystem = $filesystem ?: ConfigKit::filesystem();
+        $this->filesystem = $filesystem ?: Configuration::fs();
     }
 
     /**
@@ -41,7 +42,7 @@ class ConfigurationBuilder implements ConfigurationBuilderInterface
      *
      * @throws InvalidConfigException
      */
-    public function useDirectory($path)
+    public function useDirectory(string $path): ConfigurationBuilderInterface
     {
         if (!is_dir($path)) {
             throw new InvalidConfigException('Configuration folder path seems to be incorrect.');
@@ -54,7 +55,7 @@ class ConfigurationBuilder implements ConfigurationBuilderInterface
     /**
      * @inheritdoc
      */
-    public function useCache($value)
+    public function useCache($value): ConfigurationBuilderInterface
     {
         $this->useCache = $value;
 
@@ -64,7 +65,7 @@ class ConfigurationBuilder implements ConfigurationBuilderInterface
     /**
      * @inheritdoc
      */
-    public function useCacheDirectory($path)
+    public function useCacheDirectory($path): ConfigurationBuilderInterface
     {
         if (!$this->filesystem->isDirectory($path)) {
             $this->filesystem->makeDirectory($path, 0755, false, true);
@@ -78,7 +79,7 @@ class ConfigurationBuilder implements ConfigurationBuilderInterface
     /**
      * @inheritdoc
      */
-    public function build($name)
+    public function build(string $name): array
     {
         $cached = $this->cacheDirectory . DIRECTORY_SEPARATOR . $name . '-config.php';
 
@@ -90,7 +91,7 @@ class ConfigurationBuilder implements ConfigurationBuilderInterface
         $sections = $this->buildSections($this->configPath);
 
         $config = ArrayHelper::merge($config, $sections);
-        $config = ArrayHelper::merge($config, $this->buildEnv($name, ConfigKit::env()->get('YII_ENV')));
+        $config = ArrayHelper::merge($config, $this->buildEnv($name, Configuration::env()->get('YII_ENV')));
 
         $this->cacheFile($cached, $config);
 
@@ -109,7 +110,7 @@ class ConfigurationBuilder implements ConfigurationBuilderInterface
     {
         $config = [];
         $sections = [];
-        $configPath = ConfigKit::config()->getEnvConfigPath() . DIRECTORY_SEPARATOR . $name;
+        $configPath = Configuration::app()->getEnvConfigPath() . DIRECTORY_SEPARATOR . $name;
         $path = $configPath . DIRECTORY_SEPARATOR . $env;
 
         if ($this->filesystem->exists($path)) {
@@ -127,7 +128,7 @@ class ConfigurationBuilder implements ConfigurationBuilderInterface
         /*
          * Local configuration always overrides
          */
-        $local = ConfigKit::str()->is($env, 'local')
+        $local = Configuration::str()->is($env, 'local')
             ? $sections // local env? is an override
             : ArrayHelper::merge($sections, $this->buildEnv($name, 'local'));
 
@@ -166,6 +167,7 @@ class ConfigurationBuilder implements ConfigurationBuilderInterface
 
         foreach ($directories as $directory => $path) {
             foreach ($this->filesystem->allFiles($path, '/^.*\.php/i') as $basename => $filePath) {
+                $basename = pathinfo($basename, PATHINFO_FILENAME);
                 $config = $this->filesystem->getRequiredFileValue($filePath);
                 if (is_array($config)) {
                     $sections[$directory][$basename] = $config;

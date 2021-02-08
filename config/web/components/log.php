@@ -1,10 +1,10 @@
 <?php
 
-use SideKit\Config\ConfigKit;
+use Da\Config\Configuration;
 
 return [
 
-    'traceLevel' => ConfigKit::env()->get('YII_TRACE_LEVEL'),
+    'traceLevel' => Configuration::env()->get('YII_TRACE_LEVEL'),
 
     /*
      * --------------------------------------------------------------------------

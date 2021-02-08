@@ -1,6 +1,6 @@
 <?php
 
-use SideKit\Config\ConfigKit;
+use Da\Config\Configuration;
 use yii\console\Application;
 
 /*
@@ -14,7 +14,7 @@ use yii\console\Application;
  * variables.
  */
 
-$config = ConfigKit::config()->build('console', ConfigKit::env()->get('CONFIG_USE_CACHE'));
+$config = Configuration::app()->build('console', Configuration::env()->get('CONFIG_USE_CACHE'));
 
 $app = new Application($config);
 
