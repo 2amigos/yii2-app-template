@@ -35,7 +35,7 @@ require __DIR__ . '/../../bootstrap/sidekit-test.php';
 require __DIR__ . '/../../bootstrap/aliases.php';
 
 
-use SideKit\Config\ConfigKit;
+use Da\Config\Configuration;
 use yii\helpers\ArrayHelper;
 use yii\console\Application;
 
@@ -49,7 +49,7 @@ use yii\console\Application;
  * unnecessary code on the entry script.
  */
 
-$config = ConfigKit::config()->build('console', ConfigKit::env()->get('CONFIG_USE_CACHE'));
+$config = Configuration::app()->build('console', Configuration::env()->get('CONFIG_USE_CACHE'));
 
 /*
  * --------------------------------------------------------------------------

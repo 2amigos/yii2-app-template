@@ -1,6 +1,7 @@
 <?php
 
-use SideKit\Config\ConfigKit;
+use Da\Config\Configuration;
+
 /*
  * --------------------------------------------------------------------------
  * Register custom Yii aliases
@@ -8,6 +9,6 @@ use SideKit\Config\ConfigKit;
  *
  * As we have changed the structure. Modify default Yii aliases here.
  */
-Yii::setAlias('@tests', ConfigKit::config()->getBasePath() . DIRECTORY_SEPARATOR . '../tests');
-Yii::setAlias('@root', ConfigKit::config()->getRootPath());
-Yii::setAlias('@web', ConfigKit::config()->getBasePath() . DIRECTORY_SEPARATOR . '../public');
+Yii::setAlias('@tests', Configuration::app()->getBasePath() . DIRECTORY_SEPARATOR . '../tests');
+Yii::setAlias('@root', Configuration::app()->getRootPath());
+Yii::setAlias('@web', Configuration::app()->getBasePath() . DIRECTORY_SEPARATOR . '../public');

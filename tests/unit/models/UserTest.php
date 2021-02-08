@@ -2,41 +2,42 @@
 namespace tests\models;
 
 use app\models\User;
+use yii\web\IdentityInterface;
 
 class UserTest extends \Codeception\Test\Unit
 {
     public function testFindUserById()
     {
-        expect_that($user = User::findIdentity(100));
-        expect($user->username)->equals('admin');
+        verify_that($user = User::findIdentity(100))->instanceOf('yii\web\IdentityInterface');
+        verify($user->username)->equals('admin');
 
-        expect_not(User::findIdentity(999));
+        verify_that(User::findIdentity(999))->null();
     }
 
     public function testFindUserByAccessToken()
     {
-        expect_that($user = User::findIdentityByAccessToken('100-token'));
-        expect($user->username)->equals('admin');
+        verify_that($user = User::findIdentityByAccessToken('100-token'))->instanceOf('yii\web\IdentityInterface');
+        verify($user->username)->equals('admin');
 
-        expect_not(User::findIdentityByAccessToken('non-existing'));
+        verify_that(User::findIdentityByAccessToken('non-existing'))->null();
     }
 
     public function testFindUserByUsername()
     {
-        expect_that($user = User::findByUsername('admin'));
-        expect_not(User::findByUsername('not-admin'));
+        verify_that($user = User::findByUsername('admin'))->instanceOf('yii\web\IdentityInterface');
+        verify_that(User::findByUsername('not-admin'))->null();
     }
 
     /**
      * @depends testFindUserByUsername
      */
-    public function testValidateUser($user)
+    public function testValidateUser()
     {
         $user = User::findByUsername('admin');
-        expect_that($user->validateAuthKey('test100key'));
-        expect_not($user->validateAuthKey('test102key'));
+        verify_that($user->validateAuthKey('test100key'))->true();
+        verify_that($user->validateAuthKey('test102key'))->false();
 
-        expect_that($user->validatePassword('admin'));
-        expect_not($user->validatePassword('123456'));
+        verify_that($user->validatePassword('admin'))->true();
+        verify_that($user->validatePassword('123456'))->false();
     }
 }

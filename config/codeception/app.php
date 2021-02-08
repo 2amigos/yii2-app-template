@@ -43,6 +43,6 @@ require __DIR__ . '/../../bootstrap/aliases.php';
  * advantage of its loaded configuration values
  */
 
-use SideKit\Config\ConfigKit;
+use Da\Config\Configuration;
 
-return ConfigKit::config()->build('test', ConfigKit::env()->get('CONFIG_USE_CACHE'));
+return Configuration::app()->build('test', Configuration::env()->get('CONFIG_USE_CACHE'));

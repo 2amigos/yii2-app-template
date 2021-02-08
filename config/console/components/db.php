@@ -1,6 +1,6 @@
 <?php
 
-use SideKit\Config\ConfigKit;
+use Da\Config\Configuration;
 
 return [
 
@@ -14,13 +14,13 @@ return [
 
     'class' => 'yii\db\Connection',
 
-    'dsn' => ConfigKit::env()->get('DATABASE_DSN'),
+    'dsn' => Configuration::env()->get('DATABASE_DSN'),
 
-    'username' => ConfigKit::env()->get('DATABASE_USER'),
+    'username' => Configuration::env()->get('DATABASE_USER'),
 
-    'password' => ConfigKit::env()->get('DATABASE_PASSWORD'),
+    'password' => Configuration::env()->get('DATABASE_PASSWORD'),
 
-    'charset' => ConfigKit::env()->get('DATABASE_CHARSET'),
+    'charset' => Configuration::env()->get('DATABASE_CHARSET'),
 
-    'tablePrefix' => ConfigKit::env()->get('DATABASE_TABLE_PREFIX'),
+    'tablePrefix' => Configuration::env()->get('DATABASE_TABLE_PREFIX'),
 ];

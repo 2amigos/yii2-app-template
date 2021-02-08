@@ -16,7 +16,7 @@ class ContactFormTest extends \Codeception\Test\Unit
     {
         /** @var ContactForm $model */
         $this->model = $this->getMockBuilder('app\models\ContactForm')
-            ->setMethods(['validate'])
+            ->onlyMethods(['validate'])
             ->getMock();
 
         $this->model->expects($this->once())
@@ -30,16 +30,16 @@ class ContactFormTest extends \Codeception\Test\Unit
             'body' => 'body of current message',
         ];
 
-        expect_that($this->model->contact('admin@example.com'));
+        verify_that($this->model->contact('admin@example.com'));
 
         // using Yii2 module actions to check email was sent
         $this->tester->seeEmailIsSent();
 
         $emailMessage = $this->tester->grabLastSentEmail();
-        expect('valid email is sent', $emailMessage)->isInstanceOf('yii\mail\MessageInterface');
-        expect($emailMessage->getTo())->hasKey('admin@example.com');
-        expect($emailMessage->getFrom())->hasKey('tester@example.com');
-        expect($emailMessage->getSubject())->equals('very important letter subject');
-        expect($emailMessage->toString())->contains('body of current message');
+        verify_that($emailMessage)->instanceOf('yii\mail\MessageInterface');
+        verify_that($emailMessage->getTo())->arrayHasKey('admin@example.com');
+        verify_that($emailMessage->getFrom())->arrayHasKey('tester@example.com');
+        verify_that($emailMessage->getSubject())->equals('very important letter subject');
+        verify_that($emailMessage->toString())->stringContainsString('body of current message');
     }
 }

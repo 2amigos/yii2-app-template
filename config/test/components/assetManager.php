@@ -1,9 +1,8 @@
 <?php
 
-use SideKit\Config\ConfigKit;
+use Da\Config\Configuration;
 
 return [
-
-    'basePath' => ConfigKit::config()->getRootPath() . '/public/assets',
+    'basePath' => Configuration::app()->getRootPath() . '/public/assets',
 
 ];
